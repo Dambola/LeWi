@@ -166,7 +166,7 @@ class MusicManager(metaclass=SingletonMeta):
         """
         
         return [ self.__toJSON(i) \
-            for i in self.__model.query.all() ]
+            for i in self.__model.query.order_by("name", "author").all() ]
     
     # ---- Private methods
 
