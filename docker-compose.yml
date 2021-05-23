@@ -21,6 +21,8 @@ services:
       - 8390:8390
     depends_on:
       - lewi-web-api
+    networks:
+      - backend-network
   
   lewi-web-front:
     container_name: lewi-web-front
