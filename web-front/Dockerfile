@@ -6,7 +6,7 @@ COPY . .
 
 RUN npm install -g @quasar/cli cross-env
 RUN npm install
-RUN cross-env API_URL=http://localhost:8390 quasar build
+RUN cross-env API_URL=$API_URL quasar build
 
 FROM nginx:1.19.10
 
