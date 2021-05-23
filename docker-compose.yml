@@ -12,7 +12,7 @@ services:
       - MYSQL_PORT=${MYSQL_PORT}
       - MYSQL_DATABASE=${MYSQL_DATABASE}
     networks:
-      backend-network
+      - backend-network
     
   lewi-web-service:
     container_name: lewi-web-service
