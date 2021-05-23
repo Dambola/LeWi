@@ -11,8 +11,8 @@ services:
       - MYSQL_HOST=${MYSQL_HOST}
       - MYSQL_PORT=${MYSQL_PORT}
       - MYSQL_DATABASE=${MYSQL_DATABASE}
-    external_links:
-      - MysqlService:mysql
+    networks:
+      backend-network
     
   lewi-web-service:
     container_name: lewi-web-service
