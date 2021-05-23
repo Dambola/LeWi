@@ -19,6 +19,8 @@ services:
     build: ./web-service
     ports:
       - 8390:8390
+    depends_on:
+      - lewi-web-api
   
   lewi-web-front:
     container_name: lewi-web-front
