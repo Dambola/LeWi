@@ -27,3 +27,6 @@ services:
       - 80:80
     environment: 
       - API_URL=${API_URL}
+  
+networks: 
+  backend-network:
