@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import { uuid } from 'vue-uuid'; 
 
 // const mutations = {
 //   // updateMusic (state, payload) {
@@ -16,8 +17,7 @@ import Vue from 'vue'
 
 export function reloadMusics (state, musics) {
   musics.forEach((music) => {
-    const key = (music.name, music.author);
-    console.log(key, music);
+    const key = uuid.v1();
     Vue.set(state.musics, key, music);
   });
 }
