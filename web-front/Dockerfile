@@ -8,7 +8,7 @@ ENV API_URL=${API_URL}
 
 RUN npm install -g @quasar/cli cross-env
 RUN npm install
-RUN cross-env API_URL=${API_URL} quasar build
+RUN cross-env API_URL=http://www.louvoragapemontese.com:8960 quasar build
 
 FROM nginx:1.19.10
 
