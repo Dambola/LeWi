@@ -1,0 +1,9 @@
+SQLAlchemy<1.4
+flask==1.1.2
+flask_restful==0.3.8
+flask_sqlalchemy==2.4.4
+flask_jwt_extended==3.25.0
+flask_cors==3.0.9
+mysql-connector==2.2.9
+pymysql==1.0.2
+uwsgi

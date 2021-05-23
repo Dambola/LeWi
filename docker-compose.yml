@@ -1,0 +1,27 @@
+version: "3.9"
+services:
+  lewi-web-api:
+    container_name: lewi-web-api
+    build: ./web-api
+    expose:
+      - 8390
+    environment:
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_HOST=${MYSQL_HOST}
+      - MYSQL_PORT=${MYSQL_PORT}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+    
+  lewi-web-service:
+    container_name: lewi-web-service
+    build: ./web-service
+    ports:
+      - 8390:8390
+  
+  lewi-web-front:
+    container_name: lewi-web-front
+    build: ./web-front
+    ports:
+      - 80:80
+    environment: 
+      - API_URL=${API_URL}
