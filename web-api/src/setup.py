@@ -36,11 +36,13 @@ def createApplication(database_string):
     from src.type.controller import TypeController
     from src.user.controller import UserController, AuthController
     from src.music.controller import MusicController
+    from src.permission.controller import PermissionController
 
     restful_api.add_resource(TypeController, '/type')
     restful_api.add_resource(UserController, '/user')
     restful_api.add_resource(AuthController, '/auth')
     restful_api.add_resource(MusicController, '/music')
+    restful_api.add_resource(PermissionController, '/permission')
 
     cors_policy = CORS(application, resources={r"/*": {"origins": "*"}}, 
         supports_credentials=True)

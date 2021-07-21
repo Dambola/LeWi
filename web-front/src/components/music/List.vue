@@ -1,6 +1,5 @@
 <template>
   <q-markup-table class="lam-table-music col-12" :wrap-cells="true">
-
     <thead>
       <tr>
         <th class="text-left relative-position"> Música </th>
@@ -9,7 +8,11 @@
     </thead>
 
     <tbody>
-      <tr v-for="(music, index) in musics" :key="index">
+      <tr 
+        v-for="(music, index) in musics" 
+        :key="index"
+        @click="selectMusic(music)"
+      >
         <td class="text-left">
           <div class="text-subtitle1">
             <strong>{{ music.name }}</strong>
@@ -24,14 +27,21 @@
         </td>
       </tr>
     </tbody>
-
   </q-markup-table>
-  
 </template>
 
 <script>
   export default {
-    props : ['musics'],
+    props: {
+      musics: {
+        type: Object
+      }
+    },
+    methods: {
+      selectMusic (music) {
+        this.$emit('select', music);
+      }
+    }
   }
 </script>
 

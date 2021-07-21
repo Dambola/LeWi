@@ -12,7 +12,9 @@ class musicparser(object):
     put.add_argument('type3', location='json')
 
     post = RequestParser()
-    post.add_argument('id', location='json', required = True,
+    post.add_argument('oldName', location='json', required = True,
+        help = 'Este campo é obrigatório')
+    post.add_argument('oldAuthor', location='json', required = True,
         help = 'Este campo é obrigatório')
     post.add_argument('name', location='json', required = True,
         help = 'Este campo é obrigatório')
@@ -24,5 +26,7 @@ class musicparser(object):
     post.add_argument('type3', location='json')
 
     delete = RequestParser()
-    delete.add_argument('id', location='json', required = True,
+    delete.add_argument('name', location='json', required = True,
+        help = 'Este campo é obrigatório')
+    delete.add_argument('author', location='json', required = True,
         help = 'Este campo é obrigatório')

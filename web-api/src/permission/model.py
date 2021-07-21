@@ -1,4 +1,5 @@
 from src.db import database
+from src.permission.api import PERMISSIONS
 from src.utils.api import SingletonMeta
 
 from sqlalchemy.exc import IntegrityError
@@ -94,7 +95,10 @@ class PermissionManager(metaclass=SingletonMeta):
 
         Returns:
             list: Permissions
-        """      
-        return [ PERMS[i] for i in self.__model.query \
-            .filter_by(login=login, permission=permission).all() \
-                if i in PERMS ]
+        """
+        permissions = {}
+        for row in self.__model.query.filter_by(login=login).all():
+            key = row.permission
+            if key in PERMISSIONS:
+                permissions[key] = PERMISSIONS[key]
+        return permissions

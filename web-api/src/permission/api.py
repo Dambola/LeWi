@@ -1,7 +1,11 @@
-PERMS = {}
+PERMISSIONS = {}
 
 def permission(cls):
-    PERMS[cls.NAME] = cls
+    PERMISSIONS[cls.NAME] = dict(
+        name=cls.NAME,
+        alias=cls.ALIAS,
+        description=cls.DESCRIPTION
+    )
     return cls
 
 @permission

@@ -19,6 +19,7 @@ module.exports = function (ctx) {
     // https://v1.quasar.dev/quasar-cli/boot-files
     boot: [
       'axios',
+      'permissions',
     ],
 
     // https://v1.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
@@ -67,7 +68,7 @@ module.exports = function (ctx) {
         //
       },
       env: {
-        API_URL: JSON.stringify(process.env.API_URL)
+        API_URL: JSON.stringify(process.env.API_URL || "http://localhost:8390")
       }
     },
 

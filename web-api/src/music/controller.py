@@ -27,6 +27,6 @@ class MusicController(Resource):
     def delete(self):
         manager = MusicManager()
         data = musicparser.delete.parse_args()
-        done, error = manager.delete(**data)
+        done, error = manager.remove(**data)
         return { 'done': done, 'error': error }, 200
         

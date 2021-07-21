@@ -32,29 +32,36 @@
 </template>
 
 <script>
-export default {
-  name: 'MainLayout',
-  
-  data () {
-    return {
-      leftDrawerOpen: false,
-      menuItems: [
-        {
-          title: 'Home',
-          caption: 'Início',
-          icon: 'fas fa-home',
-          link: '/'
-        },
-        {
-          title: 'Música',
-          caption: 'Lista de Músicas',
-          icon: 'fas fa-music',
-          link: '/musica'
-        }
-      ]
+  import { mapActions } from 'vuex'
+
+  export default {
+    name: 'MainLayout',
+    data () {
+      return {
+        leftDrawerOpen: false,
+        menuItems: [
+          {
+            title: 'Home',
+            caption: 'Início',
+            icon: 'fas fa-home',
+            link: '/'
+          },
+          {
+            title: 'Música',
+            caption: 'Lista de Músicas',
+            icon: 'fas fa-music',
+            link: '/musica'
+          }
+        ]
+      }
+    },
+    methods: {
+    ...mapActions('permissions', ['reloadPermissions']),
+  },
+    mounted () {
+      this.reloadPermissions(this.$axios);
     }
   }
-}
 </script>
 
 <style lang="scss">
