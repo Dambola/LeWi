@@ -20,12 +20,12 @@ services:
     ports:
       - 8390:8390
     depends_on:
-      - lewi-web-api
+      - lewi_web_api_ct
     networks:
       - backend-network
   
   lewi_web_front:
-    container_name: lewi-web-front
+    container_name: lewi_web_front_ct
     build: ./web-front
     ports:
       - 80:80
