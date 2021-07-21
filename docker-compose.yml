@@ -1,7 +1,7 @@
 version: "3.9"
 services:
-  lewi-web-api:
-    container_name: lewi-web-api
+  lewi_web_api:
+    container_name: lewi_web_api_ct
     build: ./web-api
     expose:
       - 8390
@@ -14,8 +14,8 @@ services:
     networks:
       - backend-network
     
-  lewi-web-service:
-    container_name: lewi-web-service
+  lewi_web_service:
+    container_name: lewi_web_service_ct
     build: ./web-service
     ports:
       - 8390:8390
@@ -24,7 +24,7 @@ services:
     networks:
       - backend-network
   
-  lewi-web-front:
+  lewi_web_front:
     container_name: lewi-web-front
     build: ./web-front
     ports:
@@ -34,8 +34,8 @@ services:
     networks:
       - backend-network
   
-  lewi-mysql:
-    container_name: lewi-mysql
+  lewi_mysql:
+    container_name: lewi_mysql_ct
     image: mysql:8
     command: --default-authentication-plugin=mysql_native_password
     environment: 
