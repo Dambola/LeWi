@@ -20,7 +20,7 @@ services:
     ports:
       - 8390:8390
     depends_on:
-      - lewi_web_api_ct
+      - lewi_web_api
     networks:
       - backend-network
   
